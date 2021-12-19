@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Container, Table } from "react-bootstrap";
-import Display_el from "./Dispaly_el";
-const Display = ({ files }) => {
+import DisplayData from "./DispalyData";
+const Display = ({ files, field }) => {
   return (
     <>
       <Container>
@@ -9,13 +9,21 @@ const Display = ({ files }) => {
           <thead>
             <tr>
               <th>S.no</th>
-              <th>Title</th>
-              <th>Price</th>
+              {field.map((el) => (
+                <th>{el}</th>
+              ))}
             </tr>
           </thead>
           <tbody>
             {files.map((data, index) => {
-              return <Display_el key={index} index={index} data={data} />;
+              return (
+                <DisplayData
+                  key={index}
+                  data={data}
+                  index={index}
+                  field={field}
+                />
+              );
             })}
           </tbody>
         </Table>

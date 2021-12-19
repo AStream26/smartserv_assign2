@@ -19,16 +19,13 @@ const Input = ({ files, setFiles, setField }) => {
       Result.sort((a, b) => {
         return b.popularity - a.popularity;
       });
-      console.log(Result);
+      //console.log(Result);
       setFiles(Result);
       let para = Object.keys(Result[0]);
       let res = [];
 
       for (let el of para) {
-        res.push({
-          value: el,
-          color: "white",
-        });
+        res.push(el);
       }
       if (Result.length > 0) setField(res);
       // console.log(Result);

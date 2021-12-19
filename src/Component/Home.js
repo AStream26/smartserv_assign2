@@ -6,7 +6,14 @@ import Input from "./Input/input";
 import { Row, Col, Container } from "react-bootstrap";
 import { useState } from "react";
 
-const Home = ({ files, setField, setFiles, field }) => {
+const Home = ({
+  files,
+  setField,
+  setFiles,
+  field,
+  SetSelectedField,
+  SelectedField,
+}) => {
   return (
     <>
       <h5>Import Products</h5>
@@ -18,8 +25,13 @@ const Home = ({ files, setField, setFiles, field }) => {
           <Format />
         </Col>
 
-        <Col xs={10}>
-          <Fields fields={field} />
+        <Col xs={12}>
+          <Fields
+            fields={field}
+            setField={setField}
+            SetSelectedField={SetSelectedField}
+            SelectedField={SelectedField}
+          />
         </Col>
       </Row>
     </>

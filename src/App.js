@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Row, Col, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { useState } from "react";
 import Home from "./Component/Home";
 import { Route, Switch } from "react-router-dom";
@@ -8,7 +8,8 @@ import Display from "./Component/Display";
 function App() {
   let [files, setFiles] = useState([]);
   let [field, setField] = useState([]);
-  console.log(field);
+  let [SelectedField, SetSelectedField] = useState([]);
+  // console.log(field);
   return (
     <Container>
       <Switch>
@@ -22,6 +23,8 @@ function App() {
               field={field}
               setField={setField}
               setFiles={setFiles}
+              SelectedField={SelectedField}
+              SetSelectedField={SetSelectedField}
             />
           )}
         />
@@ -31,8 +34,8 @@ function App() {
             <Display
               {...props}
               files={files}
-              field={field}
-              setField={setField}
+              field={SelectedField}
+              setField={SetSelectedField}
               setFiles={setFiles}
             />
           )}

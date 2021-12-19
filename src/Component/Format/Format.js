@@ -7,10 +7,11 @@ const Format = () => {
         alignItems: "center",
         margin: "2em",
         border: "1px solid black",
-        padding: "3em",
+        padding: "2em",
         boxShadow: "2px 1px 10px grey",
       }}
     >
+      <p>Specify Format</p>
       <Row>
         <Col xs={12} md={6}>
           File Type
@@ -33,7 +34,6 @@ const Format = () => {
           </select>
         </Col>
       </Row>
-
       <Row>
         <Col xs={12} md={6}>
           Delimiter
@@ -53,7 +53,6 @@ const Format = () => {
           <label for="12"> Has Header</label>
         </Col>
       </Row>
-
       <br></br>
     </div>
   );

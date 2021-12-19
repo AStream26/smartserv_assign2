@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 
-const Item = ({ item, selected, setSelected }) => {
+const Item = ({ item, Add, Remove, tmp }) => {
   let [color1, setColor] = useState("white");
   let clicked = (item) => {
-    let tmp = [...selected];
-    tmp.push(item);
-    setSelected(tmp);
-    console.log(tmp);
+    if (!tmp.includes(item)) Add([...tmp, item]);
+    // Remove(item);
     setColor("grey");
   };
+  console.log(item);
   return (
-    <div style={{ backgroundColor: `${color1}` }} onClick={() => clicked(item)}>
+    <div
+      key={item}
+      style={{ backgroundColor: `${color1}` }}
+      onClick={() => clicked(item)}
+    >
       {item}
     </div>
   );
